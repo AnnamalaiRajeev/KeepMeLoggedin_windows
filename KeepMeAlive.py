@@ -52,8 +52,8 @@ class AutoMouse(UserActivityInfo):
 
 if __name__ == '__main__':
     _mouse = AutoMouse()
+    print("I will not let your machine sleep....default inactive timer is set to 1 minute")
     while True:
         time.sleep(1)
-        print(_mouse.computeidletime1())
         if _mouse.computeidletime1() >= _mouse._timer_default:
             _mouse.automove()

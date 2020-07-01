@@ -17,7 +17,7 @@ class AutoMouse(UserActivityInfo):
 
     def __init__(self):
         self._resolution = pyautogui.size()
-        self._timer_default = 60 # seconds
+        self._timer_default = 8 # seconds
         super().__init__()
 
     @property
@@ -42,11 +42,14 @@ class AutoMouse(UserActivityInfo):
         _x = random.randint(0, self._resolution[0])
         _y = random.randint(0, self._resolution[1])
         pyautogui.moveTo(_x, _y)
+        pyautogui.moveTo(1, 1)
+        pyautogui.click()
 
 
 if __name__ == '__main__':
     _mouse = AutoMouse()
     while True:
         time.sleep(1)
+        print(_mouse.computeidletime1())
         if _mouse.computeidletime1() >= _mouse._timer_default:
             _mouse.automove()

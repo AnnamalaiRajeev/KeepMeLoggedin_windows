@@ -21,7 +21,7 @@ class AutoMouse(UserActivityInfo):
 
     def __init__(self):
         self._resolution = pyautogui.size()
-        self._timer_default = 8 # seconds
+        self._timer_default = 60 # seconds
         super().__init__()
 
     @property
